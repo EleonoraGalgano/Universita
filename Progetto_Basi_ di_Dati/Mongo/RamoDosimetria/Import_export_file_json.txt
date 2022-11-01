@@ -1,0 +1,10 @@
+-- Import file .json
+
+mongoimport --db RaDB --collection Dosimetro --type json --file /Users/stefanogalgano/Desktop/Mongo/RamoDosimetria/DatiProva/Dosimetro.json
+mongoimport --db RaDB --collection Impiegato --type json --file /Users/stefanogalgano/Desktop/Mongo/RamoDosimetria/DatiProva/Impiegato.json
+mongoimport --db RaDB --collection Qualifica --type json --file /Users/stefanogalgano/Desktop/Mongo/RamoDosimetria/DatiProva/Qualifica.json
+mongoimport --db RaDB --collection CatEsp --type json --file /Users/stefanogalgano/Desktop/Mongo/RamoDosimetria/DatiProva/CatEsp.json
+
+-- export Collection finale--
+
+mongoexport --db RaDB --collection CategoriaEsposizione --out /Users/stefanogalgano/Desktop/Mongo/RamoDosimetria/DatiProva/CategoriaEsposizione.json

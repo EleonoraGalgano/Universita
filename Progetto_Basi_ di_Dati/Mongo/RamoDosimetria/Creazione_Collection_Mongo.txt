@@ -1,0 +1,126 @@
+--Riordinamento dei campi--
+
+db.Dosimetro.updateMany({}, [
+  {$replaceWith: {
+    $mergeObjects: [
+      {
+      	"_id": "$_id",
+        "idDosimetro": "$idDosimetro",
+        "matricola": "$matricola",
+        "doseRegistrata": "$doseRegistrata",
+        "inizioPeriodo": "$inizioPeriodo",
+        "finePeriodo": "$finePeriodo"
+      },
+      "$$ROOT"
+    ]
+  }}
+])
+
+db.Impiegato.updateMany({}, [
+  {$replaceWith: {
+    $mergeObjects: [
+      {
+      	"_id": "$_id",
+        "matricola": "$matricola",
+        "nome": "$nome",
+        "cognome": "$cognome",
+        "dataNascita": "$dataNascita",
+        "cittaNascita": "$cittaNascita",
+        "codiceFiscale":"$codiceFiscale",
+        "indirizzo":"$indirizzo",
+        "cap":"$cap",
+        "cap":"$cap",
+        "telefono":"$telefono",
+        "codiceQualifica":"$codiceQualifica"
+      },
+      "$$ROOT"
+    ]
+  }}
+])
+
+db.Qualifica.updateMany({}, [
+  {$replaceWith: {
+    $mergeObjects: [
+      {
+      	"_id": "$_id",
+        "codiceQualifica": "$codiceQualifica",
+        "codiceCategoria": "$codiceCategoria",
+        "descrizione": "$descrizione",
+      },
+      "$$ROOT"
+    ]
+  }}
+])
+
+db.CatEsp.updateMany({}, [
+  {$replaceWith: {
+    $mergeObjects: [
+      {
+      	"_id": "$_id",
+        "codiceCategoria": "$codiceCategoria",
+        "doseSoglia": "$doseSoglia",
+        "descrizione": "$descrizione"
+      },
+      "$$ROOT"
+    ]
+  }}
+])
+
+--Trasormazione del tipo di dato dei campi--
+
+db.Dosimetro.find().forEach(function(x){
+x.inizioPeriodo = ISODate(x.inizioPeriodo);
+db.Dosimetro.save(x);
+});
+db.Dosimetro.find().forEach(function(x){
+x.finePeriodo = ISODate(x.finePeriodo);
+db.Dosimetro.save(x);
+});
+Creazione del documento finale
+
+--Creazione del documento strutturato--
+
+db.Impiegato.aggregate([
+ {
+  $lookup:
+ {
+ from:"Dosimetro",
+ localField:"matricola",
+ foreignField:"matricola",
+ as:"dosimetri"
+ }
+ },
+ {
+ $out:"ImpiegatoDosimetria"
+  }
+]);
+
+db.Qualifica.aggregate([
+ {
+  $lookup:
+ {
+ from:"ImpiegatoDosimetria",
+ localField:"codiceQualifica",
+ foreignField:"codiceQualifica",
+ as:"qualificati"
+ }
+ },
+ {
+ $out:"InquadramentoProfessionale"
+  }
+]);
+
+db.CatEsp.aggregate([
+ {
+  $lookup:
+ {
+ from:"InquadramentoProfessionale",
+ localField:"codiceCategoria",
+ foreignField:"codiceCategoria",
+ as:"inquadramentoInCategoria"
+ }
+ },
+ {
+ $out:"CategoriaEsposizione"
+  }
+]);

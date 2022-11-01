@@ -1,0 +1,133 @@
+--Riordinamento dei campi--
+
+db.ViewEsame.updateMany({}, [
+  {$replaceWith: {
+    $mergeObjects: [
+      {
+      	"_id": "$_id",
+        "idEsame": "$idEsame",
+        "idRichiesta": "$idRichiesta",
+        "dataOraEsame": "$dataOraEsame",
+        "matricolaTSRM": "$matricolaTSRM",
+        "statoEsame": "$statoEsame",
+        "immaginiAccettate": "$immaginiAccettate",
+        "immaginiRifiutate": "$immaginiRifiutate",
+        "dosemGycm": "$dosemGycm",
+        "commento": "$commento",
+        "matricolaMR": "$matricolaMR",
+        "referto": "$referto",
+        "dataOraReferto": "$dataOraReferto"
+      },
+      "$$ROOT"
+    ]
+  }}
+])
+
+db.ViewRichiesta.updateMany({}, [
+  {$replaceWith: {
+    $mergeObjects: [
+      {
+      	"_id": "$_id",
+        "idRichiesta": "$idRichiesta",
+        "idPaziente": "$idPaziente",
+        "quesitoDiagnostico": "$quesitoDiagnostico",
+        "codiceEsenzione": "$codiceEsenzione",
+        "dataOraRichiesta": "$dataOraRichiesta",
+        "codicePrestazione": "$codicePrestazione",
+        "tipoPrestazione": "$tipoPrestazione",
+        "nomePrestazione": "$nomePrestazione",
+        "costo": "$costo",
+        "LDR": "$LDR",
+        "priorita": "$priorita",
+        "nomeDipartimento": "$nomeDipartimento",
+        "dataOraAppuntamento": "$dataOraAppuntamento",
+        "numeroStanza": "$numeroStanza",
+        "statoRichiesta": "$statoRichiesta",
+        "matricolaAmministrativo": "$matricolaAmministrativo"
+      },
+      "$$ROOT"
+    ]
+  }}
+])
+
+db.ViewPz.updateMany({}, [
+  {$replaceWith: {
+    $mergeObjects: [
+      {
+      	"_id": "$_id",
+        "idPaziente": "$idPaziente",
+        "nome": "$nome",
+        "cognome": "$cognome",
+        "genere": "$genere",
+        "dataNascita": "$dataNascita",
+        "cittaNascita": "$cittaNascita",
+        "codiceFiscale": "$codiceFiscale",
+        "indirizzo": "$indirizzo",
+        "cap": "$cap",
+        "comune": "$comune",
+        "regione": "$regione",
+        "telefono": "$telefono",
+        "note": "$note"
+      },
+      "$$ROOT"
+    ]
+  }}
+])
+
+-- Cancellazione Campi null --
+db.ViewEsame.update({'matricolaMR': null }, {$unset : { 'matricolaMR' : 1 }}, { multi: true })
+
+db.ViewEsame.update({'referto': null }, {$unset : { 'referto' : 1 }}, { multi: true })
+
+db.ViewEsame.update({'dataOraReferto': null }, {$unset : { 'dataOraReferto' : 1 }}, { multi: true })
+
+db.ViewRichiesta.update({'codiceEsenzione': null }, {$unset : { 'codiceEsenzione' : 1 }}, { multi: true })
+
+--Trasormazione del tipo di dato dei campi--
+
+db.ViewEsame.find().forEach(function(x){
+x.dataOraEsame = ISODate(x.dataOraEsame);
+db.ViewEsame.save(x);
+});
+
+db.ViewRichiesta.find().forEach(function(x){
+x.dataOraRichiesta = ISODate(x.dataOraRichiesta);
+db.ViewRichiesta.save(x);
+});
+
+db.ViewRichiesta.find().forEach(function(x){
+x.dataOraAppuntamento = ISODate(x.dataOraAppuntamento);
+db.ViewRichiesta.save(x);
+});
+
+--Creazione del documento strutturato--
+
+db.ViewRichiesta.aggregate([
+ {
+  $lookup:
+ {
+ from:"ViewEsame",
+ localField:"idRichiesta",
+ foreignField:"idRichiesta",
+ as:"Esame"
+ }
+ },
+ {
+ $out:"Richiesta"
+  }
+]);
+
+db.ViewPz.aggregate([
+ {
+  $lookup:
+ {
+ from:"Richiesta",
+ localField:"idPaziente",
+ foreignField:"idPaziente",
+ as:"Richieste"
+ }
+ },
+ {
+ $out:"PazientiRichieste"
+  }
+]);

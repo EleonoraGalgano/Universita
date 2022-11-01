@@ -1,0 +1,15 @@
+select json_object("idDosimetro", idDosimetro, "matricola", matricola, "doseRegistrata", doseRegistrata, 
+"inizioPeriodo", DATE_FORMAT(inizioPeriodo, '%Y-%m-%dT%TZ'), "finePeriodo", DATE_FORMAT(finePeriodo, '%Y-%m-%dT%TZ')) 
+into outfile 'Dosimetro.json' from Dosimetro;
+
+select json_object("matricola", matricola, "nome", nome, "cognome", cognome,
+"dataNascita", dataNascita, "cittaNascita", cittaNascita, "codiceFiscale", codiceFiscale, 
+"indirizzo", indirizzo, "cap", cap, "telefono", telefono, 
+"codiceQualifica", codiceQualifica, "username", username)
+into outfile 'Impiegato.json' from Impiegato;
+
+select json_object("codiceQualifica", codiceQualifica, "codiceCategoria", codiceCategoria, "descrizione", descrizione)
+into outfile 'Qualifica.json' from Qualifica;
+
+select json_object("codiceCategoria", codiceCategoria, "doseSoglia", doseSoglia, "descrizione", descrizione)
+into outfile 'CatEsp.json' from CategoriaEsposizione;

@@ -1,0 +1,102 @@
+CREATE TABLE ComuneResidenza (
+  comune varchar(50) NOT NULL PRIMARY KEY,
+  regione varchar(50) NOT NULL);
+CREATE TABLE Zona (
+  cap int NOT NULL PRIMARY KEY,
+  comune varchar(50) NOT NULL, FOREIGN KEY (comune) REFERENCES comuneResidenza (comune) ON UPDATE CASCADE ON DELETE NO ACTION);
+CREATE TABLE Paziente (
+  idPaziente int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  nome varchar(20) NOT NULL,
+  cognome varchar(20) NOT NULL,
+  genere varchar(1) NOT NULL,
+  dataNascita date NOT NULL,
+  cittaNascita varchar(15) NOT NULL,
+  codiceFiscale varchar(16) NOT NULL UNIQUE,
+  indirizzo varchar(50) NOT NULL,
+  cap int NOT NULL, FOREIGN KEY (cap) REFERENCES zona (cap) ON UPDATE CASCADE ON DELETE NO ACTION,
+  telefono varchar(11) NOT NULL,
+  note text);
+CREATE TABLE Prestazione (
+  codicePrestazione varchar(10) NOT NULL PRIMARY KEY,
+  tipoPrestazione varchar(3) NOT NULL,
+  nomePrestazione varchar(50) NOT NULL,
+  LDR decimal(6,2) NOT NULL DEFAULT 0.00,
+  costo decimal(6,2) NOT NULL);
+CREATE TABLE Esenzione (
+  codiceEsenzione varchar(7) NOT NULL PRIMARY KEY,
+  condizione varchar(50) NOT NULL,
+  territorio varchar(20) NOT NULL);
+CREATE TABLE PacchettoPrestazionale (
+  codicePrestazione varchar(15) NOT NULL, FOREIGN KEY (codicePrestazione) REFERENCES Prestazione (codicePrestazione) ON UPDATE CASCADE ON DELETE NO ACTION,
+  codiceEsenzione varchar(7) NOT NULL, FOREIGN KEY (codiceEsenzione) REFERENCES Esenzione (codiceEsenzione) ON UPDATE CASCADE ON DELETE NO ACTION,
+  PRIMARY KEY (codicePrestazione,codiceEsenzione));
+CREATE TABLE Dipartimento (
+  nomeDipartimento varchar(5) NOT NULL PRIMARY KEY,
+  descrizione varchar(30) NOT NULL);
+CREATE TABLE CategoriaEsposizione (
+  codiceCategoria varchar(1) NOT NULL PRIMARY KEY,
+  doseSoglia decimal(6,2) NOT NULL,
+  descrizione varchar(50) NOT NULL);
+CREATE TABLE Qualifica (
+  codiceQualifica varchar(5) NOT NULL PRIMARY KEY,
+  codiceCategoria varchar(1) NOT NULL, FOREIGN KEY (codiceCategoria) REFERENCES categoriaEsposizione (codiceCategoria) ON UPDATE CASCADE ON DELETE NO ACTION,
+  descrizione varchar(30) NOT NULL);
+CREATE TABLE Impiegato (
+  matricola int NOT NULL PRIMARY KEY,
+  nome varchar(15) NOT NULL,
+  cognome varchar(15) NOT NULL,
+  dataNascita date NOT NULL,
+  cittaNascita varchar(15) NOT NULL,
+  codiceFiscale varchar(16) NOT NULL UNIQUE,
+  indirizzo varchar(50) NOT NULL,
+  cap int NOT NULL,
+  telefono varchar(11) NOT NULL,
+  codicequalifica varchar(5) NOT NULL, FOREIGN KEY (codicequalifica) REFERENCES Qualifica (codiceQualifica) ON UPDATE CASCADE ON DELETE NO ACTION,
+  username varchar(50) NOT NULL UNIQUE);
+CREATE TABLE Dosimetro (
+  idDosimetro int NOT NULL,
+  matricola int NOT NULL, FOREIGN KEY (matricola) REFERENCES Impiegato (matricola) ON UPDATE CASCADE ON DELETE NO ACTION,
+  doseRegistrata decimal(6,2) NOT NULL,
+  inizioPeriodo date NOT NULL,
+  finePeriodo date NOT NULL);
+CREATE TABLE Sala (
+  numeroStanza smallint NOT NULL PRIMARY KEY,
+  metodoImaging varchar(5) NOT NULL,
+  riservata varchar(15) NOT NULL);
+CREATE TABLE Calendario (
+  data date NOT NULL PRIMARY KEY);
+CREATE TABLE Orario (
+  ora time NOT NULL PRIMARY KEY);
+CREATE TABLE Richiesta (
+  idRichiesta int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  idPaziente int NOT NULL, FOREIGN KEY (idPaziente) REFERENCES Paziente (idPaziente) ON UPDATE CASCADE ON DELETE NO ACTION,
+  quesitoDiagnostico varchar(50) NOT NULL,
+  dataOraRichiesta datetime NOT NULL,
+  codicePrestazione varchar(7) NOT NULL, FOREIGN KEY (codicePrestazione) REFERENCES Prestazione (codicePrestazione) ON UPDATE CASCADE ON DELETE NO ACTION,
+  priorita int NOT NULL, CHECK (priorita between 0 and 3),
+  nomeDipartimento varchar(5) NOT NULL, FOREIGN KEY (nomeDipartimento) REFERENCES Dipartimento (nomeDipartimento) ON UPDATE CASCADE ON DELETE NO ACTION,
+  dataAppuntamento date NOT NULL, FOREIGN KEY (dataAppuntamento) REFERENCES Calendario (data) ON UPDATE CASCADE ON DELETE NO ACTION,
+  OraAppuntamento time NOT NULL, FOREIGN KEY (OraAppuntamento) REFERENCES Orario (ora) ON UPDATE CASCADE ON DELETE NO ACTION,
+  numeroStanza smallint NOT NULL, FOREIGN KEY (numeroStanza) REFERENCES Sala (numeroStanza) ON UPDATE CASCADE ON DELETE NO ACTION,
+  statoRichiesta set('Accettato','Prenotato','Cancellato') NOT NULL,
+  matricolaAmministrativo int, FOREIGN KEY (matricolaAmministrativo) REFERENCES Impiegato (matricola) ON UPDATE CASCADE ON DELETE NO ACTION);
+CREATE TABLE Associata (
+  idRichiesta int NOT NULL UNIQUE, FOREIGN KEY (idRichiesta) REFERENCES Richiesta (idRichiesta) ON UPDATE CASCADE ON DELETE NO ACTION,
+  codiceEsenzione varchar(3) NOT NULL, FOREIGN KEY (codiceEsenzione) REFERENCES Esenzione (codiceEsenzione) ON UPDATE CASCADE ON DELETE NO ACTION,
+  PRIMARY KEY (idRichiesta, codiceEsenzione));
+CREATE TABLE Esame (
+  idEsame int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  idRichiesta int NOT NULL, FOREIGN KEY (idRichiesta) REFERENCES Richiesta (idRichiesta) ON UPDATE CASCADE ON DELETE NO ACTION,
+  dataOraEsame datetime NOT NULL,
+  matricolaTSRM int NOT NULL, FOREIGN KEY (matricolaTSRM) REFERENCES Impiegato (matricola) ON UPDATE CASCADE ON DELETE NO ACTION,
+  statoEsame set('Annullato','Completato') NOT NULL,
+  immaginiAccettate int NOT NULL DEFAULT 0,
+  immaginiRifiutate int NOT NULL DEFAULT 0,
+  dosemGycm decimal(6,2) NOT NULL DEFAULT 0.0,
+  commento text);
+CREATE TABLE Referta (
+  matricolaMR int NOT NULL, FOREIGN KEY (matricolaMR) REFERENCES Impiegato (matricola) ON UPDATE CASCADE ON DELETE NO ACTION,
+  idEsame int NOT NULL UNIQUE, FOREIGN KEY (idEsame) REFERENCES Esame (idEsame) ON UPDATE CASCADE ON DELETE NO ACTION,
+  referto text,
+  dataOraReferto datetime NOT NULL,
+   PRIMARY KEY(matricolaMR,idEsame));

@@ -1,0 +1,42 @@
+-- Creazione delle view--
+
+CREATE VIEW ViewPz AS
+SELECT idPaziente,nome,cognome,genere,dataNascita,cittaNascita,codiceFiscale,indirizzo,
+Paziente.cap,ComuneResidenza.comune,ComuneResidenza.regione,telefono,note   
+FROM Paziente, Zona, ComuneResidenza
+WHERE Paziente.cap = zona.cap
+AND zona.comune = ComuneResidenza.comune;
+
+CREATE VIEW ViewRichiesta AS
+SELECT Richiesta.idRichiesta,idPaziente,quesitoDiagnostico,Associata.codiceEsenzione,
+DATE_FORMAT(dataOraRichiesta, '%Y-%m-%dT%TZ') as dataOraRichiesta, richiesta.codicePrestazione, Prestazione.tipoPrestazione, Prestazione.nomePrestazione, 
+Prestazione.costo, Prestazione.LDR,
+priorita,nomeDipartimento, DATE_FORMAT(timeStamp(dataAppuntamento,oraAppuntamento), '%Y-%m-%dT%TZ') as dataOraAppuntamento,
+numeroStanza,statoRichiesta,matricolaAmministrativo
+FROM Richiesta inner join Prestazione on richiesta.codicePrestazione = Prestazione.codicePrestazione
+LEFT JOIN Associata ON Richiesta.idRichiesta = Associata.idRichiesta;
+
+CREATE VIEW ViewEsame AS
+SELECT Esame.idEsame, idRichiesta, DATE_FORMAT(dataOraEsame, '%Y-%m-%dT%TZ') as dataOraEsame, 
+matricolaTSRM,statoEsame,immaginiAccettate,
+immaginiRifiutate,dosemGycm,commento,matricolaMR,referto,
+DATE_FORMAT(dataOraReferto, '%Y-%m-%dT%TZ') as dataOraReferto
+FROM Esame LEFT JOIN Referta ON Esame.idEsame = Referta.idEsame;
+
+--Creazione File .json--
+
+select  json_object('idPaziente', idPaziente, 'nome', nome, 'cognome', cognome, 'genere', genere, 'dataNascita', dataNascita, 'cittaNascita', cittaNascita, 'codiceFiscale', codiceFiscale, 'indirizzo', indirizzo, 'cap', cap, 'comune', comune, 'regione', regione, 'telefono', telefono, 'note', note)
+into outfile 'ViewPz.json' from ViewPz;
+
+select json_object('idRichiesta', idRichiesta, 'idPaziente',idPaziente, 'quesitoDiagnostico',quesitoDiagnostico,
+'codiceEsenzione', codiceEsenzione, 'dataOraRichiesta', dataOraRichiesta,
+'codicePrestazione',codicePrestazione, 'tipoPrestazione',tipoPrestazione, 'nomePrestazione', nomePrestazione, 
+'costo',costo, 'LDR',LDR, 'priorita', priorita, 'nomeDipartimento',nomeDipartimento, 'dataOraAppuntamento', dataOraAppuntamento,
+'numeroStanza',numeroStanza, 'statoRichiesta', statoRichiesta, 'matricolaAmministrativo', matricolaAmministrativo) 
+into outfile 'ViewRichiesta.json' from ViewRichiesta;
+
+select json_object('idEsame',idEsame, 'idRichiesta', idRichiesta, 'dataOraEsame', dataOraEsame,
+'matricolaTSRM', matricolaTSRM, 'statoEsame', statoEsame, 'immaginiAccettate', immaginiAccettate, 
+'immaginiRifiutate', immaginiRifiutate, 'dosemGycm', dosemGycm, 'commento', commento, 'matricolaMR', matricolaMR,
+'referto', referto, 'dataOraReferto', dataOraReferto)
+into outfile 'ViewEsame.json' from ViewEsame;

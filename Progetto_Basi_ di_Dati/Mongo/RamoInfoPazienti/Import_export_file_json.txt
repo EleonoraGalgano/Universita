@@ -1,0 +1,16 @@
+-- import dei file .json--
+dati prova:
+mongoimport --db RaDB --collection ViewRichiesta --type json --file /Users/stefanogalgano/Desktop/Mongo/RamoInfoPazienti/DatiProva/ViewRichiesta.json
+mongoimport --db RaDB --collection ViewPz --type json --file /Users/stefanogalgano/Desktop/Mongo/RamoInfoPazienti/DatiProva/ViewPz.json
+mongoimport --db RaDB --collection ViewEsame --type json --file /Users/stefanogalgano/Desktop/Mongo/RamoInfoPazienti/DatiProva/ViewEsame.json
+
+dati massivi:
+mongoimport --db RaDB2 --collection ViewRichiesta --type json --file /Users/stefanogalgano/Desktop/Mongo/RamoInfoPazienti/DatiProvaEMassivi/ViewRichiesta.json
+mongoimport --db RaDB2 --collection ViewPz --type json --file /Users/stefanogalgano/Desktop/Mongo/RamoInfoPazienti/DatiProvaEMassivi/ViewPz.json
+mongoimport --db RaDB2 --collection ViewEsame --type json --file /Users/stefanogalgano/Desktop/Mongo/RamoInfoPazienti/DatiProvaEMassivi/ViewEsame.json
+
+-- export Collection finale--
+
+mongoexport --db RaDB --collection PazientiRichieste --out /Users/stefanogalgano/Desktop/Mongo/RamoInfoPazienti/DatiProva/PazientiRichieste1.json
+
+mongoexport --db RaDB2 --collection PazientiRichieste --out /Users/stefanogalgano/Desktop/Mongo/RamoInfoPazienti/DatiProvaEMassivi/PazientiRichieste2.json
