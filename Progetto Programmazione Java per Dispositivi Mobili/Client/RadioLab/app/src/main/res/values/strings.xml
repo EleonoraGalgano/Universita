@@ -1,0 +1,168 @@
+<resources>
+
+    <string name="app_name">RadioLab</string>
+    <string name="logoapp">logoApp</string>
+    <string name="home">Home</string>
+
+    <!--Accesso e Registrazione-->
+
+    <string name="registrati">Registrati</string>
+    <string name="accedi">Accedi</string>
+    <string name="indirizzo">Indirizzo</string>
+    <string name="telefono">Telefono</string>
+    <string name="codice_fiscale">Codice Fiscale</string>
+    <string name="maschio">M</string>
+    <string name="femmina">F</string>
+    <string name="genere">Genere</string>
+    <string name="cittaNascita">Citta di nascita</string>
+    <string name="dataNascita">Data di Nascita</string>
+    <string name="cognome">Cognome</string>
+    <string name="nome">Nome</string>
+    <string name="cap">C.A.P</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="conferma_password">Conferma password</string>
+
+    <!--Gestione Profilo-->
+
+    <string name="vecchia_password">Vecchia password</string>
+    <string name="nuova_password">Nuova password</string>
+    <string name="conferma_nuova_password">Conferma nuova password</string>
+    <string name="rimuovi_account">Rimuovi Account</string>
+    <string name="disconnetti">DISCONNETTI</string>
+    <string name="profiloPersonale">IL TUO PROFILO</string>
+    <string name="modifica">MODIFICA</string>
+    <string name="nuovo_valore">nuovo valore</string>
+    <string name="encryption">********</string>
+
+    <!--Home-->
+
+    <string name="profilo">PROFILO</string>
+    <string name="appuntamenti">APPUNTAMENTI</string>
+    <string name="prenota_ora">PRENOTA ORA</string>
+    <string name="informazioni">INFORMAZIONI</string>
+
+    <!--Prenotazione-->
+
+    <string name="prenota_prestazioni">PRENOTA UNA PRESTAZIONE</string>
+    <string name="elenco_esami">ELENCO ESAMI</string>
+    <string name="appuntamenti_disponibili">APPUNTAMENTI DISPONIBILI</string>
+    <string name="visualizza_disponibilita">VISUALIZZA DISPONIBILITA\'</string>
+    <string name="riepilogo_prenotazione">RIEPILOGO PRENOTAZIONE</string>
+    <string name="conferma">CONFERMA</string>
+    <string name="nome_prestazione">NOME PRESTAZIONE</string>
+    <string name="data">DATA</string>
+    <string name="ora">ORA</string>
+    <string name="luogo">LUOGO</string>
+    <string name="id_prenotazione">ID PRENOTAZIONE</string>
+    <string name="annulla">ANNULLA</string>
+
+
+    <!--Informazioni-->
+
+    <string name="locazionestruttura">locazioneStruttura</string>
+    <string name="orari_apertura">Orari Apertura</string>
+    <string name="centri_diagnostici">VIENI A TROVARCI NEI NOSTRI CENTRI DIAGNOSTICI</string>
+    <string name="radiolab_eur">Radiolab Eur</string>
+    <string name="radiolab_hall">Radiolab Hall</string>
+
+    <!--Appuntamenti-->
+
+    <string name="i_tuoi_appuntamenti">I TUOI APPUNTAMENTI</string>
+    <string name="calendar">calendar</string>
+    <string name="richiesta_conferma_cancellazione">Cencellare appuntamento?</string>
+
+    <string name="benvenuto_in_nradiolab">Benvenuto in \nRadiolab</string>
+    <string name="pazienteOpzione">Sono un paziente</string>
+    <string name="amministrativoOpzione">Sono un amministrativo</string>
+    <string name="opzioni">Scegli una delle seguenti opzioni:</string>
+    <string name="username">Username</string>
+    <string name="amministrazione">AMMINISTRAZIONE</string>
+    <string name="dati_statistici">DATI STATISTICI PRENOTAZIONI</string>
+    <string name="planning">PLANNING</string>
+    <string name="gestione_appuntamenti">Gestione Appuntamenti</string>
+    <string name="modifica_informazioni_sede">MODIFICA INFORMAZIONI SEDE</string>
+    <string name="prenotazioni_prestazioni">PRENOTAZIONI PRESTAZIONI</string>
+    <string name="prestazioni_disattese">AMMONTARE \nDELLE \nPRESTAZIONI DISATTESE</string>
+    <string name="tempi_d_attesa">ANALISI \nDEI \nTEMPI \nD\'ATTESA</string>
+    <string name="affluenza_aree">AFFLUENZA AREE</string>
+    <string name="informazioni_pazienti">RICERCA INFORMAZIONI PAZIENTE</string>
+    <string name="modifica_prestazioni">MODIFICA DETTAGLI PRESTAZIONE</string>
+    <string name="radolab_sezione_amministrativa">SEZIONE AMMINISTRATIVA</string>
+    <string name="andamento_settimanale_prenotazioni">ANDAMENTO SETTIMANALE DELLE PRENOTAZIONI</string>
+    <string name="andamento_ngiornaliero_ndel_nfatturato">ANDAMENTO \nGIORNALIERO \nDEL \nFATTURATO</string>
+    <string name="radiolab_appio_claudio">Radiolab AppioClaudio</string>
+    <string name="sede">SEDE</string>
+    <string name="eur">Eur</string>
+    <string name="da">Da</string>
+    <string name="appio_claudio">Appio Claudio</string>
+    <string name="a">A</string>
+    <string name="periodo">PERIODO</string>
+    <string name="non_fruite">Non Fruite</string>
+    <string name="eseguite">Eseguite</string>
+    <string name="valutare">VALUTARE</string>
+    <string name="ordinamento">DAL</string>
+    <string name="cresecente">Più recente</string>
+    <string name="decrescente">Meno recente</string>
+    <string name="esegui">ESEGUI</string>
+    <string name="visualizza_grafico">VISUALIZZA GRAFICO</string>
+    <string name="codice_prestazione">CODICE PRESTAZIONE</string>
+    <string name="quantita">QUANTITA\'</string>
+    <string name="scegli_la_prestazione_da_modificare">Scegli la prestazione da modificare</string>
+    <string name="fatturato">FATTURATO</string>
+    <string name="tot">TOT</string>
+    <string name="totale_periodo">TOTALE</string>
+    <string name="richiedi_planning">RICHIEDI PLANNING</string>
+    <string name="selezionare_una_data">Selezionare una data</string>
+    <string name="seleziona_una_sala">Seleziona una sala</string>
+    <string name="sala">SALA</string>
+    <string name="mese">MESE</string>
+    <string name="ammontare">AMMONTARE</string>
+    <string name="calcola">CALCOLA</string>
+    <string name="prestazione">PRESTAZIONE</string>
+    <string name="passa_a_grafico">Passa a grafico</string>
+    <string name="positivo">Positivo</string>
+    <string name="negativo">Negativo</string>
+
+    <string name="mese_anno">MESE/ANNO</string>
+    <string name="impiegato">impiegato</string>
+    <string name="paziente">paziente</string>
+    <string name="entra_nell_applicazione">ENTRA NELL\'APPLICAZIONE</string>
+    <string name="connessione_errore">errore di connessione</string>
+    <string name="fallita_registrazione">Registrazione fallita:</string>
+    <string name="fallito_accesso">Accesso fallito:</string>
+    <string name="fallita_cancellazione">Cancellazione fallita:</string>
+    <string name="fallito_disponibilita">Ricerca disponibilità non eseguibile:</string>
+    <string name="fallita_ricerca_appuntamento">Ricerca appuntamento non eseguibile:</string>
+    <string name="fallito_fatturato">Impossibile recuperare fatturato:</string>
+    <string name="fallita_statistica">Impossibile recuperare i dati:</string>
+    <string name="fallito_recupero_info_pz">Impossibile recuperare informazioni del profilo:</string>
+    <string name="modifica_non_effettuata">Modifica non effettuata:</string>
+    <string name="fallito_recupero_prestazioni">Impossibile recuperare prestazioni:</string>
+    <string name="fallita_prenotazione">Impossibile prenotazre appuntamento:</string>
+    <string name="fallito_recupero_info_imp">Impossibile recuperare informazioni profilo:</string>
+    <string name="fallito_modifica">Impossibile modificare:</string>
+    <string name="dividi_per">DIVIDI PER</string>
+    <string name="modifica_successo">Modifica effettuata con successo</string>
+    <string-array name="raggruppamento">
+        <item>MESE</item>
+        <item>ANNO</item>
+    </string-array>
+    <string-array name="ruolo">
+        <item>impiegato</item>
+        <item>paziente</item>
+    </string-array>
+
+    <!--URL per connessione alla servelet-->
+    <string name="host">http://<!--HOSTNAME-->:<!--PORT-->/Radiolab/</string>
+    <string name="listaPrestazioni_urlPattern">ListaPrestazioniServlet</string>
+    <string name="accessoPaziente_urlPattern">LoginPazienteServlet</string>
+    <string name="profiloPaziente_urlPattern">PazienteServlet</string>
+    <string name="listaAppuntamenti_urlPattern">AppuntamentiServlet</string>
+    <string name="gestionePrenotazioni_urlPattern">GestionePrenotazioniServlet</string>
+    <string name="accessoImpiegato_urlPattern">LoginImpiegatoServlet</string>
+    <string name="profiloAmministrativo_urlPattern">ImpiegatoServlet</string>
+    <string name="esecuzioneStatistica_urlPattern">StatisticaPrenotazioniServlet</string>
+    <string name="registrazione_urlPattern">RegistrazionePazienteServlet</string>
+
+</resources>

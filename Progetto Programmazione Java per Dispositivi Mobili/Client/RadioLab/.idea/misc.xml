@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/galga/Desktop/ProgettoPJDM/ProgettoPJDM/RadioLab/app/src/main/res/drawable-ldpi/background_rounded.xml" value="0.1715" />
+        <entry key="..\:/Users/galga/Desktop/ProgettoPJDM/ProgettoPJDM/RadioLab/app/src/main/res/drawable-ldpi/buttons.xml" value="0.1715" />
+        <entry key="..\:/Users/galga/Desktop/ProgettoPJDM/ProgettoPJDM/RadioLab/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.254" />
+        <entry key="..\:/Users/galga/Desktop/ProgettoPJDM/ProgettoPJDM/RadioLab/app/src/main/res/drawable/cancella_btn.xml" value="0.289" />
+        <entry key="..\:/Users/galga/Desktop/ProgettoPJDM/ProgettoPJDM/RadioLab/app/src/main/res/drawable/costum_image_bg.xml" value="0.3035" />
+        <entry key="..\:/Users/galga/Desktop/ProgettoPJDM/ProgettoPJDM/RadioLab/app/src/main/res/drawable/custom_background_dialog.xml" value="0.2" />
+        <entry key="..\:/Users/galga/Desktop/ProgettoPJDM/ProgettoPJDM/RadioLab/app/src/main/res/drawable/custom_button.xml" value="0.289" />
+        <entry key="..\:/Users/galga/Desktop/ProgettoPJDM/ProgettoPJDM/RadioLab/app/src/main/res/drawable/custom_button_image_view.xml" value="0.254" />
+        <entry key="..\:/Users/galga/Desktop/ProgettoPJDM/ProgettoPJDM/RadioLab/app/src/main/res/drawable/custom_image_bg.xml" value="0.289" />
+        <entry key="..\:/Users/galga/Desktop/ProgettoPJDM/ProgettoPJDM/RadioLab/app/src/main/res/drawable/custom_table_bg.xml" value="0.254" />
+        <entry key="..\:/Users/galga/Desktop/ProgettoPJDM/ProgettoPJDM/RadioLab/app/src/main/res/drawable/ic_launcher_background.xml" value="0.3035" />
+        <entry key="..\:/Users/galga/Desktop/ProgettoPJDM/ProgettoPJDM/RadioLab/app/src/main/res/drawable/selected.xml" value="0.254" />
+        <entry key="..\:/Users/galga/Desktop/ProgettoPJDM/ProgettoPJDM/RadioLab/app/src/main/res/drawable/selected_border.xml" value="0.133" />
+        <entry key="..\:/Users/galga/Desktop/ProgettoPJDM/ProgettoPJDM/RadioLab/app/src/main/res/layout/activity_main.xml" value="0.16799999999999998" />
+        <entry key="..\:/Users/galga/Desktop/ProgettoPJDM/ProgettoPJDM/RadioLab/app/src/main/res/layout/bt_cancella.xml" value="0.30052083333333335" />
+        <entry key="..\:/Users/galga/Desktop/ProgettoPJDM/ProgettoPJDM/RadioLab/app/src/main/res/layout/cancellazione_bt.xml" value="0.2994791666666667" />
+        <entry key="..\:/Users/galga/Desktop/ProgettoPJDM/ProgettoPJDM/RadioLab/app/src/main/res/layout/cancellazione_dialog.xml" value="0.4466666666666667" />
+        <entry key="..\:/Users/galga/Desktop/ProgettoPJDM/ProgettoPJDM/RadioLab/app/src/main/res/layout/fragment_accedi.xml" value="0.25" />
+        <entry key="..\:/Users/galga/Desktop/ProgettoPJDM/ProgettoPJDM/RadioLab/app/src/main/res/layout/fragment_accesso.xml" value="0.1" />
+        <entry key="..\:/Users/galga/Desktop/ProgettoPJDM/ProgettoPJDM/RadioLab/app/src/main/res/layout/fragment_accesso_amministrativo.xml" value="0.25" />
+        <entry key="..\:/Users/galga/Desktop/ProgettoPJDM/ProgettoPJDM/RadioLab/app/src/main/res/layout/fragment_amministrazione.xml" value="0.25" />
+        <entry key="..\:/Users/galga/Desktop/ProgettoPJDM/ProgettoPJDM/RadioLab/app/src/main/res/layout/fragment_appuntamenti.xml" value="0.30052083333333335" />
+        <entry key="..\:/Users/galga/Desktop/ProgettoPJDM/ProgettoPJDM/RadioLab/app/src/main/res/layout/fragment_dati_statistici.xml" value="0.25" />
+        <entry key="..\:/Users/galga/Desktop/ProgettoPJDM/ProgettoPJDM/RadioLab/app/src/main/res/layout/fragment_disponibilita.xml" value="0.30052083333333335" />
+        <entry key="..\:/Users/galga/Desktop/ProgettoPJDM/ProgettoPJDM/RadioLab/app/src/main/res/layout/fragment_fatturato.xml" value="0.25" />
+        <entry key="..\:/Users/galga/Desktop/ProgettoPJDM/ProgettoPJDM/RadioLab/app/src/main/res/layout/fragment_gestione_profilo.xml" value="0.264" />
+        <entry key="..\:/Users/galga/Desktop/ProgettoPJDM/ProgettoPJDM/RadioLab/app/src/main/res/layout/fragment_gestione_sede.xml" value="0.25" />
+        <entry key="..\:/Users/galga/Desktop/ProgettoPJDM/ProgettoPJDM/RadioLab/app/src/main/res/layout/fragment_grafico_dati_statistici.xml" value="0.25" />
+        <entry key="..\:/Users/galga/Desktop/ProgettoPJDM/ProgettoPJDM/RadioLab/app/src/main/res/layout/fragment_grafico_fatturato.xml" value="0.25" />
+        <entry key="..\:/Users/galga/Desktop/ProgettoPJDM/ProgettoPJDM/RadioLab/app/src/main/res/layout/fragment_home.xml" value="0.28169014084507044" />
+        <entry key="..\:/Users/galga/Desktop/ProgettoPJDM/ProgettoPJDM/RadioLab/app/src/main/res/layout/fragment_home_amministrativo.xml" value="0.264" />
+        <entry key="..\:/Users/galga/Desktop/ProgettoPJDM/ProgettoPJDM/RadioLab/app/src/main/res/layout/fragment_lista_esami.xml" value="0.30052083333333335" />
+        <entry key="..\:/Users/galga/Desktop/ProgettoPJDM/ProgettoPJDM/RadioLab/app/src/main/res/layout/fragment_lista_prestazioni.xml" value="0.30052083333333335" />
+        <entry key="..\:/Users/galga/Desktop/ProgettoPJDM/ProgettoPJDM/RadioLab/app/src/main/res/layout/fragment_login.xml" value="0.30052083333333335" />
+        <entry key="..\:/Users/galga/Desktop/ProgettoPJDM/ProgettoPJDM/RadioLab/app/src/main/res/layout/fragment_modifica_prestazione.xml" value="0.264" />
+        <entry key="..\:/Users/galga/Desktop/ProgettoPJDM/ProgettoPJDM/RadioLab/app/src/main/res/layout/fragment_modifica_prestazione_selezionata.xml" value="0.15208333333333332" />
+        <entry key="..\:/Users/galga/Desktop/ProgettoPJDM/ProgettoPJDM/RadioLab/app/src/main/res/layout/fragment_modifica_sede.xml" value="0.15208333333333332" />
+        <entry key="..\:/Users/galga/Desktop/ProgettoPJDM/ProgettoPJDM/RadioLab/app/src/main/res/layout/fragment_pagina_iniziale.xml" value="0.264" />
+        <entry key="..\:/Users/galga/Desktop/ProgettoPJDM/ProgettoPJDM/RadioLab/app/src/main/res/layout/fragment_planning.xml" value="0.25" />
+        <entry key="..\:/Users/galga/Desktop/ProgettoPJDM/ProgettoPJDM/RadioLab/app/src/main/res/layout/fragment_planning2.xml" value="0.4" />
+        <entry key="..\:/Users/galga/Desktop/ProgettoPJDM/ProgettoPJDM/RadioLab/app/src/main/res/layout/fragment_prenotazione.xml" value="0.30052083333333335" />
+        <entry key="..\:/Users/galga/Desktop/ProgettoPJDM/ProgettoPJDM/RadioLab/app/src/main/res/layout/fragment_profilo_amministrativo.xml" value="0.25" />
+        <entry key="..\:/Users/galga/Desktop/ProgettoPJDM/ProgettoPJDM/RadioLab/app/src/main/res/layout/fragment_registration_form.xml" value="0.3" />
+        <entry key="..\:/Users/galga/Desktop/ProgettoPJDM/ProgettoPJDM/RadioLab/app/src/main/res/layout/fragment_registrazione.xml" value="0.264" />
+        <entry key="..\:/Users/galga/Desktop/ProgettoPJDM/ProgettoPJDM/RadioLab/app/src/main/res/layout/fragment_sedi.xml" value="0.25" />
+        <entry key="..\:/Users/galga/Desktop/ProgettoPJDM/ProgettoPJDM/RadioLab/app/src/main/res/layout/fragment_strutture.xml" value="0.30052083333333335" />
+        <entry key="..\:/Users/galga/Desktop/ProgettoPJDM/ProgettoPJDM/RadioLab/app/src/main/res/layout/modifica_dialog.xml" value="0.22" />
+        <entry key="..\:/Users/galga/Desktop/ProgettoPJDM/ProgettoPJDM/RadioLab/app/src/main/res/layout/modifica_password_dialog.xml" value="0.24895833333333334" />
+        <entry key="..\:/Users/galga/Desktop/ProgettoPJDM/ProgettoPJDM/RadioLab/app/src/main/res/layout/ora_row.xml" value="0.12291666666666666" />
+        <entry key="..\:/Users/galga/Desktop/ProgettoPJDM/ProgettoPJDM/RadioLab/app/src/main/res/layout/row_appuntamento.xml" value="0.4466666666666667" />
+        <entry key="..\:/Users/galga/Desktop/ProgettoPJDM/ProgettoPJDM/RadioLab/app/src/main/res/layout/row_disponibilita.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/galga/Desktop/ProgettoPJDM/ProgettoPJDM/RadioLab/app/src/main/res/layout/row_fatturato.xml" value="0.24895833333333334" />
+        <entry key="..\:/Users/galga/Desktop/ProgettoPJDM/ProgettoPJDM/RadioLab/app/src/main/res/layout/row_ora.xml" value="0.264" />
+        <entry key="..\:/Users/galga/Desktop/ProgettoPJDM/ProgettoPJDM/RadioLab/app/src/main/res/layout/row_prestazione.xml" value="0.30052083333333335" />
+        <entry key="..\:/Users/galga/Desktop/ProgettoPJDM/ProgettoPJDM/RadioLab/app/src/main/res/layout/row_sede.xml" value="0.25" />
+        <entry key="..\:/Users/galga/Desktop/ProgettoPJDM/ProgettoPJDM/RadioLab/app/src/main/res/layout/row_statistica.xml" value="0.25" />
+        <entry key="..\:/Users/galga/Desktop/ProgettoPJDM/ProgettoPJDM/RadioLab/app/src/main/res/layout/row_struttura.xml" value="0.6" />
+        <entry key="..\:/Users/galga/Desktop/ProgettoPJDM/ProgettoPJDM/RadioLab/app/src/main/res/layout/struttura_row.xml" value="0.2994791666666667" />
+        <entry key="app/src/main/res/drawable/costum_image_bg.xml" value="0.122" />
+        <entry key="app/src/main/res/drawable/custom_button.xml" value="0.101" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.2526041666666667" />
+        <entry key="app/src/main/res/layout/calendar_dialog.xml" value="0.17" />
+        <entry key="app/src/main/res/layout/fragment_accesso.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_accesso_amministrativo.xml" value="0.2515625" />
+        <entry key="app/src/main/res/layout/fragment_amministrazione.xml" value="0.2515625" />
+        <entry key="app/src/main/res/layout/fragment_dati_statistici.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_disponibilita.xml" value="0.2526041666666667" />
+        <entry key="app/src/main/res/layout/fragment_fatturato.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_gestione_profilo.xml" value="0.2526041666666667" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_home_amministrativo.xml" value="0.2515625" />
+        <entry key="app/src/main/res/layout/fragment_lista_prestazioni.xml" value="0.1125" />
+        <entry key="app/src/main/res/layout/fragment_login.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_modifica_prestazione.xml" value="0.2515625" />
+        <entry key="app/src/main/res/layout/fragment_modifica_sede.xml" value="0.2515625" />
+        <entry key="app/src/main/res/layout/fragment_pagina_iniziale.xml" value="0.25104166666666666" />
+        <entry key="app/src/main/res/layout/fragment_planning.xml" value="0.2515625" />
+        <entry key="app/src/main/res/layout/fragment_prenotazione.xml" value="0.2526041666666667" />
+        <entry key="app/src/main/res/layout/fragment_profilo_amministrativo.xml" value="0.2515625" />
+        <entry key="app/src/main/res/layout/fragment_registration_form.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_registrazione.xml" value="0.2515625" />
+        <entry key="app/src/main/res/layout/fragment_statistiche_prenotazioni.xml" value="0.2515625" />
+        <entry key="app/src/main/res/layout/fragment_strutture.xml" value="0.2526041666666667" />
+        <entry key="app/src/main/res/layout/row_appuntamento.xml" value="0.2526041666666667" />
+        <entry key="app/src/main/res/layout/row_fatturato.xml" value="0.2515625" />
+        <entry key="app/src/main/res/layout/row_prestazione.xml" value="0.2515625" />
+        <entry key="app/src/main/res/layout/row_sede.xml" value="0.2515625" />
+        <entry key="app/src/main/res/layout/row_statistica.xml" value="0.2515625" />
+        <entry key="app/src/main/res/layout/row_struttura.xml" value="0.2526041666666667" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

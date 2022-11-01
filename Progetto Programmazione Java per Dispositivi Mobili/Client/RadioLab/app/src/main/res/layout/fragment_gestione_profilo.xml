@@ -1,0 +1,581 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UI.GestioneProfiloFragment">
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/imageFilterView"
+        android:layout_width="422dp"
+        android:layout_height="178dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/healthcare_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent=".27"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:layout_width="422dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/healthcare_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent=".27"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="0dp"
+        android:layout_height="605dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/background_rounded"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent=".78"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnDisconnetti"
+            android:layout_width="186dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/buttons"
+            android:text="@string/disconnetti"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="TextContrastCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btRimuoviAccount"
+            android:layout_width="186dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="22dp"
+            android:background="@drawable/buttons"
+            android:text="@string/rimuovi_account"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/btnDisconnetti"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/btnDisconnetti"
+            tools:ignore="TextContrastCheck,TouchTargetSizeCheck" />
+
+        <TableLayout
+            android:id="@+id/tlProfilo"
+            android:layout_width="0dp"
+            android:layout_height="475dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="4dp"
+            app:layout_constraintBottom_toTopOf="@+id/btnDisconnetti"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTuoProfilo">
+
+            <TableRow
+                android:id="@+id/trNome"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/et_bg"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:minHeight="30dp"
+                android:paddingStart="10dp">
+
+                <TextView
+                    android:id="@+id/tvNome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/nome"
+                    android:textSize="14sp"
+                    tools:ignore="TextContrastCheck" />
+
+                <TextView
+                    android:id="@+id/tvNomePaziente"
+                    android:layout_width="160dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="1dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:ems="10"
+                    android:hint="@string/nome"
+                    android:paddingLeft="10dp"
+                    android:textAlignment="textStart"
+                    android:textSize="14sp"
+                    tools:ignore="TextContrastCheck" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/trCognome"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/et_bg"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:minHeight="30dp"
+                android:paddingStart="10dp">
+
+                <TextView
+                    android:id="@+id/tvCognome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/cognome"
+                    android:textSize="14sp"
+                    tools:ignore="TextContrastCheck" />
+
+                <TextView
+                    android:id="@+id/tvCognomePaziente"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="1dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:hint="@string/cognome"
+                    android:paddingLeft="10dp"
+                    android:textAlignment="viewStart"
+                    android:textSize="14sp"
+                    tools:ignore="TextContrastCheck" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/trGenere"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/et_bg"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:minHeight="30dp"
+                android:paddingStart="10dp">
+
+                <TextView
+                    android:id="@+id/tvGenere2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/genere"
+                    android:textSize="14sp"
+                    tools:ignore="TextContrastCheck" />
+
+                <TextView
+                    android:id="@+id/tvGenerePaziente"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="1dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:hint="@string/genere"
+                    android:paddingLeft="10dp"
+                    android:textAlignment="viewStart"
+                    android:textSize="14sp"
+                    tools:ignore="TextContrastCheck" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/trCodiceFiscale"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/et_bg"
+                android:hint="@string/codice_fiscale"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:minHeight="30dp"
+                android:paddingStart="10dp">
+
+                <TextView
+                    android:id="@+id/tvCodiceFiscale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/codice_fiscale"
+                    android:textSize="14sp"
+                    tools:ignore="TextContrastCheck" />
+
+                <TextView
+                    android:id="@+id/tvCodiceFiscalePaziente"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="1dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:hint="@string/codice_fiscale"
+                    android:paddingLeft="10dp"
+                    android:textAlignment="viewStart"
+                    android:textSize="14sp"
+                    tools:ignore="TextContrastCheck" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/trDataNascita"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/et_bg"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:minHeight="30dp"
+                android:paddingStart="10dp">
+
+                <TextView
+                    android:id="@+id/tvDataNascita"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/dataNascita"
+                    android:textSize="14sp"
+                    tools:ignore="TextContrastCheck" />
+
+                <TextView
+                    android:id="@+id/tvDataNascitaPaziente"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="1dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:hint="@string/dataNascita"
+                    android:paddingLeft="10dp"
+                    android:textAlignment="viewStart"
+                    android:textSize="14sp"
+                    tools:ignore="TextContrastCheck" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/trCittaNascita"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/et_bg"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:minHeight="30dp"
+                android:paddingStart="10dp">
+
+                <TextView
+                    android:id="@+id/tvCittaNascita"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/cittaNascita"
+                    android:textSize="14sp"
+                    tools:ignore="TextContrastCheck" />
+
+                <TextView
+                    android:id="@+id/tvCittaNascitaPaziente"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="1dp"
+                    android:layout_marginTop="10dp"
+                    android:hint="@string/cittaNascita"
+                    android:paddingLeft="10dp"
+                    android:textAlignment="viewStart"
+                    android:textSize="14sp"
+                    tools:ignore="TextContrastCheck" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/trTelefono"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/et_bg"
+                android:gravity="center_vertical"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:minHeight="30dp"
+                android:paddingStart="10dp">
+
+                <TextView
+                    android:id="@+id/tvTelefono"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/telefono"
+                    android:textSize="14sp"
+                    tools:ignore="TextContrastCheck" />
+
+                <TextView
+                    android:id="@+id/tvTelefonoPaziente"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="1dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:ellipsize="end"
+                    android:hint="@string/telefono"
+                    android:lines="1"
+                    android:maxWidth="150dp"
+                    android:paddingLeft="10dp"
+                    android:scrollHorizontally="true"
+                    android:textAlignment="viewStart"
+                    android:textSize="14sp"
+                    tools:ignore="TextContrastCheck" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnModificaTelefono"
+                    android:layout_width="87dp"
+                    android:layout_height="41dp"
+                    android:layout_marginStart="28dp"
+                    android:background="@color/TRANSPARENT"
+                    android:text="@string/modifica"
+                    android:textColor="@color/text_color_highlight"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    tools:ignore="TextContrastCheck,DuplicateSpeakableTextCheck,TouchTargetSizeCheck" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/trIndirizzo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/et_bg"
+                android:gravity="center_vertical"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:minHeight="30dp"
+                android:paddingStart="10dp">
+
+                <TextView
+                    android:id="@+id/tvIndirizzo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/indirizzo"
+                    android:textSize="14sp"
+                    tools:ignore="TextContrastCheck" />
+
+                <TextView
+                    android:id="@+id/tvIndirizzoPaziente"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="1dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:ellipsize="end"
+                    android:hint="@string/indirizzo"
+                    android:lines="1"
+                    android:maxWidth="200dp"
+                    android:paddingLeft="10dp"
+                    android:scrollHorizontally="true"
+                    android:textAlignment="viewStart"
+                    android:textSize="14sp"
+                    tools:ignore="TextContrastCheck" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnModificaIndirizzo"
+                    android:layout_width="87dp"
+                    android:layout_height="41dp"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:background="@color/TRANSPARENT"
+                    android:text="@string/modifica"
+                    android:textColor="@color/text_color_highlight"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    tools:ignore="TextContrastCheck,TouchTargetSizeCheck" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/trCap"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/et_bg"
+                android:gravity="center_vertical"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:minHeight="30dp"
+                android:paddingStart="10dp"
+                android:paddingLeft="10dp">
+
+                <TextView
+                    android:id="@+id/tvCap"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/cap"
+                    android:textSize="14sp"
+                    tools:ignore="TextContrastCheck" />
+
+                <TextView
+                    android:id="@+id/tvCapPaziente"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="1dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:ellipsize="end"
+                    android:hint="@string/cap"
+                    android:lines="1"
+                    android:maxWidth="200dp"
+                    android:paddingLeft="10dp"
+                    android:scrollHorizontally="true"
+                    android:textAlignment="viewStart"
+                    android:textSize="14sp"
+                    tools:ignore="TextContrastCheck" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnModificaCap"
+                    android:layout_width="87dp"
+                    android:layout_height="41dp"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:background="@color/TRANSPARENT"
+                    android:text="@string/modifica"
+                    android:textColor="@color/text_color_highlight"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    tools:ignore="TextContrastCheck,TouchTargetSizeCheck" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/trEmail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/et_bg"
+                android:gravity="center_vertical"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:minHeight="30dp"
+                android:paddingStart="10dp"
+                android:paddingLeft="10dp">
+
+                <TextView
+                    android:id="@+id/tvEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/email"
+                    android:textSize="14sp"
+                    tools:ignore="TextContrastCheck" />
+
+                <TextView
+                    android:id="@+id/tvEmailPaziente"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="1dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:ellipsize="end"
+                    android:hint="@string/email"
+                    android:lines="1"
+                    android:maxWidth="200dp"
+                    android:paddingLeft="10dp"
+                    android:scrollHorizontally="true"
+                    android:textAlignment="viewStart"
+                    android:textSize="14sp"
+                    tools:ignore="TextContrastCheck" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnModificaEmail"
+                    android:layout_width="87dp"
+                    android:layout_height="41dp"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:background="@color/TRANSPARENT"
+                    android:text="@string/modifica"
+                    android:textColor="@color/text_color_highlight"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    tools:ignore="TextContrastCheck,TouchTargetSizeCheck" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/trPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/et_bg"
+                android:gravity="center_vertical"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:minHeight="30dp"
+                android:paddingStart="10dp">
+
+                <TextView
+                    android:id="@+id/tvPassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/password"
+                    android:textSize="14sp"
+                    tools:ignore="TextContrastCheck" />
+
+                <TextView
+                    android:id="@+id/tvPasswordPaziente"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="1dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:maxWidth="200dp"
+                    android:paddingLeft="10dp"
+                    android:scrollHorizontally="true"
+                    android:text="@string/encryption"
+                    android:textAlignment="viewStart"
+                    android:textSize="14sp"
+                    tools:ignore="TextContrastCheck" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnModificaPassword"
+                    android:layout_width="87dp"
+                    android:layout_height="41dp"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:background="@color/TRANSPARENT"
+                    android:text="@string/modifica"
+                    android:textColor="@color/text_color_highlight"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    tools:ignore="TextContrastCheck,TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
+
+            </TableRow>
+        </TableLayout>
+
+        <TextView
+            android:id="@+id/tvTuoProfilo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="150dp"
+            android:text="@string/profiloPersonale"
+            android:textAlignment="center"
+            android:textColor="@color/text_color_highlight"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/tlProfilo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="TextContrastCheck" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

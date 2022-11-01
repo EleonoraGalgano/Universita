@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/paginaInizialeFragment">
+
+    <fragment
+        android:id="@+id/AccessoFragment"
+        android:name="pjdm.pjdm2022.radiolab.UI.AccessoFragment"
+        android:label="fragment_accesso"
+        tools:layout="@layout/fragment_accesso">
+        <action
+            android:id="@+id/action_accessoFragment_to_registrazioneFragment"
+            app:destination="@id/registrazioneFragment" />
+        <action
+            android:id="@+id/action_accessoFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_AccessoFragment_to_paginaInizialeFragment"
+            app:destination="@id/paginaInizialeFragment" />
+        <action
+            android:id="@+id/action_AccessoFragment_to_AccessoAmministrativoFragment"
+            app:destination="@id/AccessoAmministrativoFragment" />
+        <action
+            android:id="@+id/action_AccessoFragment_to_homeAmministrativoFragment"
+            app:destination="@id/homeAmministrativoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrazioneFragment"
+        android:name="pjdm.pjdm2022.radiolab.UI.RegistrazioneFragment"
+        android:label="fragment_registrazione"
+        tools:layout="@layout/fragment_registrazione">
+        <action
+            android:id="@+id/action_registrazioneFragment_to_accessoFragment"
+            app:destination="@id/AccessoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="pjdm.pjdm2022.radiolab.UI.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_sediFragment"
+            app:destination="@id/sediFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_listaEsamiFragment"
+            app:destination="@id/listaEsamiFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_appuntamentiFragment"
+            app:destination="@id/appuntamentiFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_gestioneProfiloFragment"
+            app:destination="@id/gestioneProfiloFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sediFragment"
+        android:name="pjdm.pjdm2022.radiolab.UI.SediFragment"
+        android:label="fragment_sedi"
+        tools:layout="@layout/fragment_sedi" >
+        <action
+            android:id="@+id/action_sediFragment_to_AccessoFragment"
+            app:destination="@id/AccessoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listaEsamiFragment"
+        android:name="pjdm.pjdm2022.radiolab.UI.ListaPrestazioniFragment"
+        android:label="fragment_lista_esami"
+        tools:layout="@layout/fragment_lista_prestazioni" >
+        <action
+            android:id="@+id/action_listaPrestazioniFragment_to_disponibilitaFragment"
+            app:destination="@id/disponibilitaFragment" />
+        <action
+            android:id="@+id/action_listaEsamiFragment_to_AccessoFragment"
+            app:destination="@id/AccessoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/appuntamentiFragment"
+        android:name="pjdm.pjdm2022.radiolab.UI.AppuntamentiFragment"
+        android:label="fragment_appuntamenti"
+        tools:layout="@layout/fragment_appuntamenti" >
+        <action
+            android:id="@+id/action_appuntamentiFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <argument
+            android:name="nomePrestazione"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_appuntamentiFragment_to_AccessoFragment"
+            app:destination="@id/AccessoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/prenotazioneFragment"
+        android:name="pjdm.pjdm2022.radiolab.UI.PrenotazioneFragment"
+        android:label="fragment_prenotazione"
+        tools:layout="@layout/fragment_prenotazione" >
+        <action
+            android:id="@+id/action_prenotazioneFragment_to_appuntamentiFragment"
+            app:destination="@id/appuntamentiFragment" />
+        <action
+            android:id="@+id/action_prenotazioneFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <argument
+            android:name="nomePrestazione"
+            app:argType="string" />
+        <argument
+            android:name="ora"
+            app:argType="string" />
+        <argument android:name="data"
+            app:argType="string" />
+        <argument
+            android:name="luogo"
+            app:argType="string" />
+        <argument
+            android:name="idSala"
+            app:argType="integer" />
+        <argument
+            android:name="codicePrestazione"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_prenotazioneFragment_to_AccessoFragment"
+            app:destination="@id/AccessoFragment" />
+        <action
+            android:id="@+id/action_prenotazioneFragment_to_disponibilitaFragment"
+            app:destination="@id/disponibilitaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/disponibilitaFragment"
+        android:name="pjdm.pjdm2022.radiolab.UI.DisponibilitaFragment"
+        android:label="fragment_disponibilita"
+        tools:layout="@layout/fragment_disponibilita" >
+        <action
+            android:id="@+id/action_disponibilitaFragment_to_prenotazioneFragment"
+            app:destination="@id/prenotazioneFragment" />
+        <action
+            android:id="@+id/action_disponibilitaFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <argument
+            android:name="nomePrestazioneScelta"
+            app:argType="string" />
+        <argument
+            android:name="codicePrestazioneScelta"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_disponibilitaFragment_to_AccessoFragment"
+            app:destination="@id/AccessoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gestioneProfiloFragment"
+        android:name="pjdm.pjdm2022.radiolab.UI.GestioneProfiloFragment"
+        android:label="fragment_gestione_profilo"
+        tools:layout="@layout/fragment_gestione_profilo" >
+        <action
+            android:id="@+id/action_gestioneProfiloFragment_to_accessoFragment"
+            app:destination="@id/AccessoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/paginaInizialeFragment"
+        android:name="pjdm.pjdm2022.radiolab.UI.PaginaInizialeFragment"
+        android:label="fragment_pagina_iniziale"
+        tools:layout="@layout/fragment_pagina_iniziale" >
+        <action
+            android:id="@+id/action_paginaInizialeFragment_to_AccessoFragment"
+            app:destination="@id/AccessoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/AccessoAmministrativoFragment"
+        android:name="pjdm.pjdm2022.radiolab.UI.AccessoAmministrativoFragment"
+        android:label="fragment_accesso_amministrativo"
+        tools:layout="@layout/fragment_accesso_amministrativo" >
+        <action
+            android:id="@+id/action_AccessoAmministrativoFragment_to_homeAmministrativoFragment"
+            app:destination="@id/homeAmministrativoFragment" />
+        <action
+            android:id="@+id/action_AccessoAmministrativoFragment_to_paginaInizialeFragment"
+            app:destination="@id/paginaInizialeFragment" />
+        <action
+            android:id="@+id/action_AccessoAmministrativoFragment_to_AccessoFragment"
+            app:destination="@id/AccessoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeAmministrativoFragment"
+        android:name="pjdm.pjdm2022.radiolab.UI.HomeAmministrativoFragment"
+        android:label="fragment_home_amministrativo"
+        tools:layout="@layout/fragment_home_amministrativo" >
+        <action
+            android:id="@+id/action_homeAmministrativoFragment_to_datiStatisticiFragment"
+            app:destination="@id/datiStatisticiFragment" />
+        <action
+            android:id="@+id/action_homeAmministrativoFragment_to_profiloAmministrativoFragment"
+            app:destination="@id/profiloAmministrativoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/datiStatisticiFragment"
+        android:name="pjdm.pjdm2022.radiolab.UI.DatiStatisticiFragment"
+        android:label="fragment_dati_statistici"
+        tools:layout="@layout/fragment_dati_statistici" >
+        <action
+            android:id="@+id/action_datiStatisticiFragment_to_AccessoAmministrativoFragment"
+            app:destination="@id/AccessoAmministrativoFragment" />
+        <action
+            android:id="@+id/action_datiStatisticiFragment_to_homeAmministrativoFragment"
+            app:destination="@id/homeAmministrativoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profiloAmministrativoFragment"
+        android:name="pjdm.pjdm2022.radiolab.UI.ProfiloAmministrativoFragment"
+        android:label="fragment_profilo_amministrativo"
+        tools:layout="@layout/fragment_profilo_amministrativo" >
+        <action
+            android:id="@+id/action_profiloAmministrativoFragment_to_AccessoAmministrativoFragment"
+            app:destination="@id/AccessoAmministrativoFragment" />
+    </fragment>
+</navigation>
